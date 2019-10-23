@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledInput = styled.input`
   color: #171718;
@@ -16,11 +17,19 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = ({
-  type = " text",
-  value = "",
-  onChange = () => null,
-  name = ""
-}) => <StyledInput type={type} value={value} onChange={onChange} name={name} />;
+const Input = ({ type = 'text', value, onChange = () => null, name = '' }) => (
+  <StyledInput type={type} value={value} onChange={onChange} name={name} />
+);
+
+Input.defaultProps = {
+  name: '',
+};
+
+Input.propTypes = {
+  type: PropTypes.string.isRequired,
+  // value: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
+  name: PropTypes.string,
+};
 
 export default Input;

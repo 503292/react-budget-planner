@@ -1,4 +1,3 @@
 export default {
-  INCREMENT: 'INCREMENT',
-  DECREMENT: 'DECREMENT',
+  GET_BUDGET: 'GET_BUDGET',
 };

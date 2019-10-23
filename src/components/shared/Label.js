@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+/* eslint-disable react/prop-types */
+import React from 'react';
+import styled from 'styled-components';
 
 const StyledLabel = styled.label`
   display: inline-block;

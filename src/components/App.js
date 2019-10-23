@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import shortid from 'shortid';
-import BudgetForm from './BudgetForm';
-import ExpenseForm from './ExpenseForm';
-import ExpensesTable from './ExpensesTable';
-import Values from './Values';
+import BudgetForm from './BudgetForm/BudgetForm';
+import ExpenseForm from './ExpenseForm/ExpenseForm';
+import ExpensesTable from './ExpensesTable/ExpensesTable';
+import Values from './Values/Values';
 
 const Container = styled.div`
   display: grid;

@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import Form from './shared/Form';
-import Label from './shared/Label';
-import Input from './shared/Input';
-import Button from './shared/Button';
+import PropTypes from 'prop-types';
+import Form from '../shared/Form';
+import Label from '../shared/Label';
+import Input from '../shared/Input';
+import Button from '../shared/Button';
 
 const labelStyles = `
   margin-bottom: 16px;  
 `;
 
-export default class BudgetForm extends Component {
+class BudgetForm extends Component {
   state = { budget: 0 };
 
   handleChange = e => {
@@ -20,21 +21,18 @@ export default class BudgetForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    this.props.onSave(this.state.budget);
+    this.props.onSave(+this.state.budget);
 
     this.setState({ budget: 0 });
   };
 
   render() {
+    const { budget } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
         <Label customStyles={labelStyles}>
           Enter your total budget
-          <Input
-            type="number"
-            value={this.state.budget}
-            onChange={this.handleChange}
-          />
+          <Input type="number" value={budget} onChange={this.handleChange} />
         </Label>
 
         <Button label="Save" type="submit" />
@@ -42,3 +40,9 @@ export default class BudgetForm extends Component {
     );
   }
 }
+
+BudgetForm.propTypes = {
+  onSave: PropTypes.func.isRequired,
+};
+
+export default BudgetForm;

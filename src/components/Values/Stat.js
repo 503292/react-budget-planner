@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   text-align: center;
@@ -28,5 +29,15 @@ const Stat = ({ label, value, isPositive }) => (
     <Value>{value}&nbsp;&#x24;</Value>
   </Container>
 );
+
+Stat.defaultProps = {
+  isPositive: true,
+};
+
+Stat.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
+  isPositive: PropTypes.bool,
+};
 
 export default Stat;

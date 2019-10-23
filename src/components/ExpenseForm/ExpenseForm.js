@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Form from './shared/Form';
-import Label from './shared/Label';
-import Input from './shared/Input';
-import Button from './shared/Button';
+import PropTypes from 'prop-types';
+import Form from '../shared/Form';
+import Label from '../shared/Label';
+import Input from '../shared/Input';
+import Button from '../shared/Button';
 
 const labelStyles = `
   margin-bottom: 16px;  
@@ -31,6 +32,7 @@ export default class ExpenseForm extends Component {
   };
 
   render() {
+    const { name, amount } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
         <Label customStyles={labelStyles}>
@@ -38,7 +40,7 @@ export default class ExpenseForm extends Component {
           <Input
             type="text"
             name="name"
-            value={this.state.name}
+            value={name}
             onChange={this.handleChange}
           />
         </Label>
@@ -47,7 +49,7 @@ export default class ExpenseForm extends Component {
           <Input
             type="number"
             name="amount"
-            value={this.state.amount}
+            value={amount}
             onChange={this.handleChange}
           />
         </Label>
@@ -57,3 +59,7 @@ export default class ExpenseForm extends Component {
     );
   }
 }
+
+ExpenseForm.propTypes = {
+  onSave: PropTypes.func.isRequired,
+};

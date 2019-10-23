@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Stat from './Stat';
 
@@ -15,5 +16,11 @@ const Values = ({ budget, expenses, balance }) => (
     <Stat label="Balance" value={balance} isPositive={balance >= 0} />
   </Container>
 );
+
+Values.propTypes = {
+  budget: PropTypes.number.isRequired,
+  expenses: PropTypes.number.isRequired,
+  balance: PropTypes.number.isRequired,
+};
 
 export default Values;
