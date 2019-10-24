@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import shortid from 'shortid';
-import BudgetForm from './BudgetForm/BudgetForm';
-import ExpenseForm from './ExpenseForm/ExpenseForm';
+import BudgetForm from './BudgetForm/BudgetFormContainer';
+import ExpenseForm from './ExpenseForm/ExpenseFormContainer';
 import ExpensesTable from './ExpensesTable/ExpensesTable';
 import Values from './Values/Values';
 

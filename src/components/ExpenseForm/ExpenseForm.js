@@ -23,11 +23,12 @@ export default class ExpenseForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    console.log(this.props);
 
     this.props.onSave({
       ...this.state,
     });
-
+    console.log(this.state);
     this.setState({ name: '', amount: 0 });
   };
 
