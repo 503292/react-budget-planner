@@ -9,3 +9,8 @@ export const getExpense = value => ({
   type: Type.GET_EXPENSE,
   payload: value,
 });
+
+export const deleteExpense = id => ({
+  type: Type.DELETE_EXPENSE,
+  payload: id,
+});

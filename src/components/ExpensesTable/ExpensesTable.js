@@ -22,26 +22,32 @@ const Table = styled.table`
 const ExpensesTable = ({ items, onRemove }) => {
   console.log(items);
   return (
-    <Table>
-      <thead>
-        <tr>
-          <th>Expense name</th>
-          <th>Expense amount</th>
-          <th />
-        </tr>
-      </thead>
-      <tbody>
-        {items.map(({ id, name, amount }) => (
-          <tr key={id}>
-            <td>{name}</td>
-            <td>{amount}</td>
-            <td>
-              <Button label="Delete" onClick={() => onRemove(id)} />
-            </td>
+    <>
+      <Table>
+        <thead>
+          <tr>
+            <th>Expense name</th>
+            <th>Expense amount</th>
+            <th />
           </tr>
-        ))}
-      </tbody>
-    </Table>
+        </thead>
+        <tbody>
+          {items.map(({ id, name, amount }) => (
+            <tr key={id}>
+              <td>{name}</td>
+              <td>{amount}</td>
+              <td>
+                <Button
+                  label="Delete"
+                  value={id}
+                  onClick={() => onRemove(id)}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </>
   );
 };
 

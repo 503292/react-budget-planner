@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import loger from './middleware/loger';
-import rootReducers from './BudgetApp/reducers';
+import rootReducers from './storeChanges/reducers';
 
 const enhancer = applyMiddleware(loger);
 

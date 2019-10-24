@@ -4,7 +4,7 @@ import {
   getBudget,
   getExpenses,
   getBalance,
-} from '../../redux/BudgetApp/BudgetAppSelectors';
+} from '../../redux/storeChanges/selects';
 
 const mapStateToProp = state => ({
   budget: getBudget(state),
