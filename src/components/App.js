@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import shortid from 'shortid';
 import BudgetForm from './BudgetForm/BudgetFormContainer';
 import ExpenseForm from './ExpenseForm/ExpenseFormContainer';
-import ExpensesTable from './ExpensesTable/ExpensesTable';
-import Values from './Values/Values';
+import ExpensesTable from './ExpensesTable/ExpensesTableContainer';
+import Values from './Values/ValueContainer';
 
 const Container = styled.div`
   display: grid;
