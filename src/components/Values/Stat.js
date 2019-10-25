@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const Container = styled.div`
   text-align: center;
@@ -23,21 +23,11 @@ const Value = styled.p`
   font-size: 48px;
 `;
 
-const Stat = ({ label, value, isPositive }) => (
+const Stat = ({ label = '', value = 0, isPositive = 0 }) => (
   <Container isPositive={isPositive}>
     <Label>{label}</Label>
     <Value>{value}&nbsp;&#x24;</Value>
   </Container>
 );
-
-Stat.defaultProps = {
-  isPositive: true,
-};
-
-Stat.propTypes = {
-  label: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
-  isPositive: PropTypes.bool,
-};
 
 export default Stat;

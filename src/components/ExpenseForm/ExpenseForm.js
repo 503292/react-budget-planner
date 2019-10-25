@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Form from '../shared/Form';
-import Label from '../shared/Label';
-import Input from '../shared/Input';
-import Button from '../shared/Button';
 import shortid from 'shortid';
+import PropTypes from 'prop-types';
+import Form from '../Form';
+import Label from '../Label';
+import Input from '../Input';
+import Button from '../Button';
 
 const labelStyles = `
   margin-bottom: 16px;  
@@ -13,7 +13,11 @@ const labelStyles = `
 export default class ExpenseForm extends Component {
   state = {
     name: '',
-    amount: 0,
+    amount: '',
+  };
+
+  static propTypes = {
+    onSave: PropTypes.func.isRequired,
   };
 
   handleChange = e => {
@@ -25,21 +29,16 @@ export default class ExpenseForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    const { name, amount } = this.state;
-
-
-    const newTrans = {
-      amount: Number(amount),
+    this.props.onSave({
       id: shortid.generate(),
-      name,
-    }
+      amount: Number(this.state.amount),
+      name: this.state.name,
+    });
 
-    this.props.onSave(newTrans);
-    this.setState({ name: '', amount: 0 });
+    this.setState({ name: '', amount: '' });
   };
 
   render() {
-    const { name, amount } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
         <Label customStyles={labelStyles}>
@@ -47,7 +46,7 @@ export default class ExpenseForm extends Component {
           <Input
             type="text"
             name="name"
-            value={name}
+            value={this.state.name}
             onChange={this.handleChange}
           />
         </Label>
@@ -56,7 +55,8 @@ export default class ExpenseForm extends Component {
           <Input
             type="number"
             name="amount"
-            value={amount}
+            placeholder={0}
+            value={this.state.amount}
             onChange={this.handleChange}
           />
         </Label>
@@ -66,7 +66,3 @@ export default class ExpenseForm extends Component {
     );
   }
 }
-
-ExpenseForm.propTypes = {
-  onSave: PropTypes.func.isRequired,
-};

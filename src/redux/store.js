@@ -1,10 +1,17 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import loger from './middleware/loger';
-import rootReducers from './storeChanges/reducers';
+import logger from 'redux-logger';
+import ReduxThunk from 'redux-thunk';
+import ExpensesReducers from './Expenses/expensesReducers';
+import budgetReducers from './BudgetForm/budgetReducers';
 
-const enhancer = applyMiddleware(loger);
+const rootReducer = combineReducers({
+  expenses: ExpensesReducers,
+  budget: budgetReducers,
+});
 
-const store = createStore(rootReducers, composeWithDevTools(enhancer));
+const middleware = applyMiddleware(ReduxThunk, logger);
+
+const store = createStore(rootReducer, composeWithDevTools(middleware));
 
 export default store;
