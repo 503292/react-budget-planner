@@ -10,7 +10,7 @@ export const getExpense = value => ({
   payload: value,
 });
 
-export const deleteExpense = id => ({
+export const deleteExpense = value => ({
   type: Type.DELETE_EXPENSE,
-  payload: id,
+  payload: value,
 });

@@ -15,8 +15,10 @@ const expenseFormReducer = (state = [], { type, payload }) => {
   switch (type) {
     case Type.GET_EXPENSE:
       return [payload, ...state];
-    case Type.DELETE_TRANSACTION:
-      return state.filter(el => el.id !== payload.id);
+
+    case Type.DELETE_EXPENSE:
+      return state.filter(el => el.id !== payload);
+
     default:
       return state;
   }
