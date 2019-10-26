@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import ExpenseForm from './ExpenseForm';
-import * as expensesActions from '../../redux/Expenses/expensesActions';
+import * as actions from '../../redux/storeChanges/actions';
 
 const mapDispatchToProps = dispatch => ({
-  onSave: form => dispatch(expensesActions.addExpense(form)),
+  onSave: input => dispatch(actions.getExpense(input)),
 });
 
 export default connect(

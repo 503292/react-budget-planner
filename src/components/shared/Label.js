@@ -15,11 +15,11 @@ const Label = ({ children, customStyles }) => (
 );
 
 Label.propTypes = {
+  customStyles: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  customStyles: PropTypes.string.isRequired,
 };
 
 export default Label;

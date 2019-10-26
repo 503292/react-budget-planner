@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import shortid from 'shortid';
 import PropTypes from 'prop-types';
-import Form from '../Form';
-import Label from '../Label';
-import Input from '../Input';
-import Button from '../Button';
+import shortid from 'shortid';
+import Form from '../shared/Form';
+import Label from '../shared/Label';
+import Input from '../shared/Input';
+import Button from '../shared/Button';
 
 const labelStyles = `
   margin-bottom: 16px;  
@@ -13,11 +13,7 @@ const labelStyles = `
 export default class ExpenseForm extends Component {
   state = {
     name: '',
-    amount: '',
-  };
-
-  static propTypes = {
-    onSave: PropTypes.func.isRequired,
+    amount: 0,
   };
 
   handleChange = e => {
@@ -29,16 +25,20 @@ export default class ExpenseForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    this.props.onSave({
-      id: shortid.generate(),
-      amount: Number(this.state.amount),
-      name: this.state.name,
-    });
+    const { name, amount } = this.state;
 
-    this.setState({ name: '', amount: '' });
+    const newTrans = {
+      amount: Number(amount),
+      id: shortid.generate(),
+      name,
+    };
+
+    this.props.onSave(newTrans);
+    this.setState({ name: '', amount: 0 });
   };
 
   render() {
+    const { name, amount } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
         <Label customStyles={labelStyles}>
@@ -46,7 +46,7 @@ export default class ExpenseForm extends Component {
           <Input
             type="text"
             name="name"
-            value={this.state.name}
+            value={name}
             onChange={this.handleChange}
           />
         </Label>
@@ -55,8 +55,7 @@ export default class ExpenseForm extends Component {
           <Input
             type="number"
             name="amount"
-            placeholder={0}
-            value={this.state.amount}
+            value={amount}
             onChange={this.handleChange}
           />
         </Label>
@@ -66,3 +65,7 @@ export default class ExpenseForm extends Component {
     );
   }
 }
+
+ExpenseForm.propTypes = {
+  onSave: PropTypes.func.isRequired,
+};

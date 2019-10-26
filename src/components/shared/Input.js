@@ -17,29 +17,21 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = ({
-  type = 'text',
-  value = null,
-  onChange = () => null,
-  name = '',
-  placeholder = '',
-}) => (
-  <StyledInput
-    placeholder={placeholder}
-    type={type}
-    value={value}
-    onChange={onChange}
-    name={name}
-  />
-);
+const Input = ({ type = 'text', value, onChange = () => null, name = '' }) => {
+  return (
+    <StyledInput type={type} value={value} onChange={onChange} name={name} />
+  );
+};
+
+Input.defaultProps = {
+  name: '',
+};
 
 Input.propTypes = {
   type: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   onChange: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    .isRequired,
+  name: PropTypes.string,
 };
 
 export default Input;

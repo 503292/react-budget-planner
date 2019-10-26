@@ -15,7 +15,6 @@ const StyledForm = styled.form`
 const Form = ({ onSubmit = () => null, children }) => (
   <StyledForm onSubmit={onSubmit}>{children}</StyledForm>
 );
-
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   children: PropTypes.oneOfType([
