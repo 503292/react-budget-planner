@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05-budget-planner/static/css/main.0f54525f.chunk.css",
-    "main.js": "/goit-react-hw-05-budget-planner/static/js/main.e614bf44.chunk.js",
-    "main.js.map": "/goit-react-hw-05-budget-planner/static/js/main.e614bf44.chunk.js.map",
-    "runtime-main.js": "/goit-react-hw-05-budget-planner/static/js/runtime-main.7957ea3a.js",
-    "runtime-main.js.map": "/goit-react-hw-05-budget-planner/static/js/runtime-main.7957ea3a.js.map",
-    "static/js/2.b8b80184.chunk.js": "/goit-react-hw-05-budget-planner/static/js/2.b8b80184.chunk.js",
-    "static/js/2.b8b80184.chunk.js.map": "/goit-react-hw-05-budget-planner/static/js/2.b8b80184.chunk.js.map",
-    "index.html": "/goit-react-hw-05-budget-planner/index.html",
-    "precache-manifest.4c8d922b86b2602009f6ec21a0dcefcb.js": "/goit-react-hw-05-budget-planner/precache-manifest.4c8d922b86b2602009f6ec21a0dcefcb.js",
-    "service-worker.js": "/goit-react-hw-05-budget-planner/service-worker.js",
-    "static/css/main.0f54525f.chunk.css.map": "/goit-react-hw-05-budget-planner/static/css/main.0f54525f.chunk.css.map"
+    "main.css": "/react-budget-planner/static/css/main.0f54525f.chunk.css",
+    "main.js": "/react-budget-planner/static/js/main.48d1643b.chunk.js",
+    "main.js.map": "/react-budget-planner/static/js/main.48d1643b.chunk.js.map",
+    "runtime-main.js": "/react-budget-planner/static/js/runtime-main.d89a2f98.js",
+    "runtime-main.js.map": "/react-budget-planner/static/js/runtime-main.d89a2f98.js.map",
+    "static/js/2.3a6f745b.chunk.js": "/react-budget-planner/static/js/2.3a6f745b.chunk.js",
+    "static/js/2.3a6f745b.chunk.js.map": "/react-budget-planner/static/js/2.3a6f745b.chunk.js.map",
+    "index.html": "/react-budget-planner/index.html",
+    "precache-manifest.d4152409236a918ce1d8b9d063850b53.js": "/react-budget-planner/precache-manifest.d4152409236a918ce1d8b9d063850b53.js",
+    "service-worker.js": "/react-budget-planner/service-worker.js",
+    "static/css/main.0f54525f.chunk.css.map": "/react-budget-planner/static/css/main.0f54525f.chunk.css.map"
   }
 }
